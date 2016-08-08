@@ -43,6 +43,35 @@ firstapp.directive('img', function($compile, $parse) {
   };
 });
 
+firstapp.directive('minHeight', function($compile, $parse) {
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function($scope, element, attrs) {
+      var $element = $(element);
+      var windowHeight = $(window).height();
+      $element.css("min-height", windowHeight+"px");
+    }
+  };
+});
+
+firstapp.directive('rotater', function($compile, $parse) {
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function($scope, element, attrs) {
+      var $element = $(element);
+      $(".form-control").focusin(function() {
+        $element.removeClass('ghum');
+      });
+      $(".form-control").focusout(function() {
+        $element.addClass('ghum');
+      });
+    }
+  };
+});
+
+
 firstapp.directive('fancyboxBox', function($document) {
     return {
         restrict: 'EA',

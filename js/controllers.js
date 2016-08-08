@@ -8,6 +8,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
   TemplateService.header = "";
   TemplateService.footer = "";
+  TemplateService.slider = "";
 })
 
 .controller('headerctrl', function($scope, TemplateService) {
