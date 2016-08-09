@@ -90,9 +90,9 @@ a, .btn {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  // padding: 65px 0;
   @include display(flex);
   align-items: center;
+  overflow: hidden;
 }
 .cloud-form {
   position: relative;
@@ -105,9 +105,6 @@ a, .btn {
     width: 100%;
 }
 .paper-box {
-    // position: absolute;
-    // top: 170px;
-    // left: 0;
     background-image: url('../img/torn-paper.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -116,13 +113,13 @@ a, .btn {
     padding: 35px 16% 80px;
 }
 .cloud-form {
+    h1 {
+      font-size: 36px;
+      margin: 0 0 10px;
+    }
   h3 {
     font-size: 20px;
     margin-top: 0;
-  }
-  h1 {
-    font-size: 36px;
-    margin: 0 0 10px;
   }
   .form-control {
       border-radius: 6px;
@@ -153,13 +150,13 @@ a, .btn {
   &.cloud1 {
     top: 0;
     left: 5%;
-    @include animation(cloudy 17s linear 0s infinite);
+    @include animation(cloudy 80s linear 0s infinite);
   }
   &.cloud2 {
     top: 10px;
     left: 44%;
     z-index: 9;
-    @include animation(cloudy 25s linear 0s infinite);
+    @include animation(cloudy 87s linear 0s infinite);
   }
 }
 .container {
@@ -167,13 +164,13 @@ a, .btn {
 }
 @include keyframes(cloudy) {
   0% {
-    @include transform(translateX(-30px));
+    @include transform(translateX(0%));
   }
   50% {
-    @include transform(translateX(30px));
+    @include transform(translateX(300%));
   }
   100% {
-    @include transform(translateX(-30px));
+    @include transform(translateX(00%));
   }
 }
 @import "fancybox-override";
