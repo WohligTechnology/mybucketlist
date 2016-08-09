@@ -9,6 +9,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.header = "";
   TemplateService.footer = "";
   TemplateService.slider = "";
+  $scope.$on('$viewContentLoaded', function() {
+    $timeout(function() {
+      $('#scene').parallax();
+    }, 1000);
+  });
 })
 
 .controller('headerctrl', function($scope, TemplateService) {
@@ -40,5 +45,4 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   };
 
 
-})
-;
+});

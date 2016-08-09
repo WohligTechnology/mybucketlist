@@ -7,72 +7,90 @@
 @import "../bower_components/swiper/dist/css/swiper.min.css";
 @import "../bower_components/smart-app-banner/smart-app-banner.css";
 @font-face {
-    font-family: 'Eurofurence';
-    src: url('../fonts/eurof35.ttf');
-    font-weight: 300;
+  font-family: 'Eurofurence';
+  src: url('../fonts/eurof35.ttf');
+  font-weight: 300;
 }
 @font-face {
-    font-family: 'Eurofurence';
-    src: url('../fonts/eurof55.ttf');
+  font-family: 'Eurofurence';
+  src: url('../fonts/eurof55.ttf');
 }
 @font-face {
-    font-family: 'Eurofurence';
-    src: url('../fonts/eurof75.ttf');
-    font-weight: bold;
+  font-family: 'Eurofurence';
+  src: url('../fonts/eurof75.ttf');
+  font-weight: bold;
 }
 @font-face {
-    font-family: 'DKLemonYellowSun';
-    src: url('../fonts/DKLemonYellowSun.otf');
+  font-family: 'DKLemonYellowSun';
+  src: url('../fonts/DKLemonYellowSun.otf');
 }
 /* Bootstrap Variables Goes Here */
 $brand-primary: #2d98b9 !default;
 $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
-$brand-danger:  #fc483f !default;
-$brand-info:    #55b6d2 !default;
-
-$text-color:    #0b0b0b !default;
-
-$font-family-sans-serif:  "Eurofurence", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       "DKLemonYellowSun", "Times New Roman", Times, serif !default;
-
+$brand-danger: #fc483f !default;
+$brand-info: #55b6d2 !default;
+$text-color: #0b0b0b !default;
+$font-family-sans-serif: "Eurofurence", Helvetica, Arial, sans-serif !default;
+$font-family-serif: "DKLemonYellowSun", "Times New Roman", Times, serif !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
 body {
   // padding-top: 70px;
 }
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-family-serif;
 }
+
 img.loading {
   text-align: center;
   opacity: 1;
   width: 32px !important;
   height: auto;
 }
+
 img {
   opacity: 0;
   @include transition(all 300ms ease);
 }
+
 img.doneLoading {
   opacity: 1;
 }
+
 nav li:hover .dropdown-menu {
   display: block;
 }
-a, .btn {
+
+.btn,
+a {
   cursor: pointer;
   @include transition(all ease 300ms);
 }
 //bootstrap forms
-.input-lg,
+
+.btn,
+.form-control,
 .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
-.btn,
-.form-control {
+.input-lg {
   border-radius: 0;
   @include box-shadow(none);
 }
+
 .form-control:focus {
   border-color: $brand-primary;
   outline: 0;
@@ -82,95 +100,126 @@ a, .btn {
 .color-primary {
   color: $brand-primary;
 }
+
 .color-white {
   color: white;
 }
+
 .blue-bg {
   background-image: url('../img/blue-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  // padding: 65px 0;
   @include display(flex);
   align-items: center;
-  overflow: hidden;
 }
+
 .cloud-form {
   position: relative;
   @include transition(all 300ms ease);
 }
+
 .ghum {
-    @include transform(rotate(-4deg));
+  @include transform(rotate(-4deg));
 }
+
 .resp-img {
-    width: 100%;
+  width: 100%;
 }
+
 .paper-box {
-    background-image: url('../img/torn-paper.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-    width: 100%;
-    padding: 35px 16% 80px;
+  // position: absolute;
+  // top: 170px;
+  // left: 0;
+  background-image: url('../img/torn-paper.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  padding: 35px 16% 80px;
 }
+
 .cloud-form {
-    h1 {
-      font-size: 36px;
-      margin: 0 0 10px;
-    }
   h3 {
     font-size: 20px;
     margin-top: 0;
   }
-  .form-control {
-      border-radius: 6px;
-      font-size: 16px;
-      border-color: $brand-primary;
+
+  h1 {
+    font-size: 36px;
+    margin: 0 0 10px;
   }
+
+  .form-control {
+    border-radius: 6px;
+    font-size: 16px;
+    border-color: $brand-primary;
+  }
+
   .btn {
     font-size: 16px;
     border-radius: 6px;
   }
 }
+
 .btn-long {
-    width: 60%;
+  width: 60%;
 }
+
 .logo {
-    height: 150px;
-    margin: 0 auto;
-    display: block;
-    margin-bottom: -20px;
-    position: relative;
+  height: 150px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: -20px;
+  position: relative;
 }
+
 .uppercase {
   text-transform: uppercase;
 }
+
 .cloud {
   position: absolute;
   width: 200px;
+
   &.cloud1 {
     top: 0;
     left: 5%;
-    @include animation(cloudy 80s linear 0s infinite);
+    @include animation(cloudy 17s linear 0s infinite);
   }
+
   &.cloud2 {
     top: 10px;
     left: 44%;
     z-index: 9;
-    @include animation(cloudy 87s linear 0s infinite);
+    @include animation(cloudy 25s linear 0s infinite);
   }
 }
+
 .container {
   position: relative;
 }
 @include keyframes(cloudy) {
   0% {
-    @include transform(translateX(0%));
+    @include transform(translateX(-30px));
   }
+
   50% {
-    @include transform(translateX(300%));
+    @include transform(translateX(30px));
   }
+
   100% {
-    @include transform(translateX(00%));
+    @include transform(translateX(-30px));
+  }
+}
+@media (max-width: $screen-xs-max) {
+  .scene {
+    width: 100%!important;
+  }
+
+  .container {
+    width: 100%;
   }
 }
 @import "fancybox-override";
