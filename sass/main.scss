@@ -110,7 +110,7 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  // padding: 65px 0;
+  padding: 35px 0;
   @include display(flex);
   align-items: center;
 }
@@ -129,9 +129,6 @@ a {
 }
 
 .paper-box {
-  // position: absolute;
-  // top: 170px;
-  // left: 0;
   background-image: url('../img/torn-paper.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
