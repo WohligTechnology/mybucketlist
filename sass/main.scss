@@ -183,14 +183,14 @@ a {
   &.cloud1 {
     top: 0;
     left: 5%;
-    @include animation(cloudy 17s linear 0s infinite);
+    @include animation(cloudy 80s linear 0s infinite);
   }
 
   &.cloud2 {
     top: 10px;
     left: 44%;
     z-index: 9;
-    @include animation(cloudy 25s linear 0s infinite);
+    @include animation(cloudy 87s linear 0s infinite);
   }
 }
 
@@ -199,15 +199,15 @@ a {
 }
 @include keyframes(cloudy) {
   0% {
-    @include transform(translateX(-30px));
+    @include transform(translateX(0));
   }
 
   50% {
-    @include transform(translateX(30px));
+    @include transform(translateX(300%));
   }
 
   100% {
-    @include transform(translateX(-30px));
+    @include transform(translateX(0));
   }
 }
 @media (max-width: $screen-xs-max) {
