@@ -1,48 +1,82 @@
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper'])
 
-.controller('ComingSoonCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-  //Used to name the .html file
-  $scope.template = TemplateService.changecontent("coming-soon");
-  $scope.menutitle = NavigationService.makeactive("Coming Soon");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
-  TemplateService.header = "";
-  TemplateService.footer = "";
-  TemplateService.slider = "";
-  $scope.$on('$viewContentLoaded', function() {
-    $timeout(function() {
-      $('#scene').parallax();
-    }, 1000);
-  });
+.controller('ComingSoonCtrl', function($scope, TemplateService, NavigationService, $timeout, $http) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("coming-soon");
+    $scope.menutitle = NavigationService.makeactive("Coming Soon");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    TemplateService.header = "";
+    TemplateService.footer = "";
+    TemplateService.slider = "";
+    $scope.showModal = false;
+
+    $scope.form = {};
+    $scope.form.age = '';
+    $scope.form.email = '';
+    $scope.typeOptions = [{
+        name: 'Age',
+        value: ''
+    }, {
+        name: 'Less than 29 years',
+        value: 'Less_than_29_years'
+    }, {
+        name: 'Between 30 to 49 years',
+        value: 'Between_30_to_49_years'
+    }, {
+        name: 'Between 50 to 69 years',
+        value: 'Between_50_to_69_years'
+    }, {
+        name: 'More than 70 years',
+        value: 'More_than_70_years'
+    }];
+
+
+    $scope.sendEmail = function(data) {
+        console.log(data);
+        $http({
+            method: 'GET',
+            url: 'http://bucketmylist.in/mail.php?email=' + data.email + "&age=" + data.age,
+        }).success(function(data) {
+            if (data.value === true) {
+                console.log("Email sent");
+                $scope.showModal = true;
+                $scope.form = {};
+            } else {
+                console.log("Error Sending Email");
+            }
+        });
+    };
+
 })
 
 .controller('headerctrl', function($scope, TemplateService) {
-  $scope.template = TemplateService;
-  $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-    $(window).scrollTop(0);
-  });
-  $.fancybox.close(true);
+    $scope.template = TemplateService;
+    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        $(window).scrollTop(0);
+    });
+    $.fancybox.close(true);
 })
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
 
-  $scope.changeLanguage = function() {
-    console.log("Language CLicked");
+    $scope.changeLanguage = function() {
+        console.log("Language Clicked");
 
-    if (!$.jStorage.get("language")) {
-      $translate.use("hi");
-      $.jStorage.set("language", "hi");
-    } else {
-      if ($.jStorage.get("language") == "en") {
-        $translate.use("hi");
-        $.jStorage.set("language", "hi");
-      } else {
-        $translate.use("en");
-        $.jStorage.set("language", "en");
-      }
-    }
-    //  $rootScope.$apply();
-  };
+        if (!$.jStorage.get("language")) {
+            $translate.use("hi");
+            $.jStorage.set("language", "hi");
+        } else {
+            if ($.jStorage.get("language") == "en") {
+                $translate.use("hi");
+                $.jStorage.set("language", "hi");
+            } else {
+                $translate.use("en");
+                $.jStorage.set("language", "en");
+            }
+        }
+        //  $rootScope.$apply();
+    };
 
 
 });
