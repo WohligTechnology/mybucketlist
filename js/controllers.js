@@ -11,9 +11,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.slider = "";
     $scope.showModal = false;
 
-    $scope.form = {};
-    $scope.form.age = '';
-    $scope.form.email = '';
     $scope.typeOptions = [{
         name: 'Age',
         value: ''
@@ -30,7 +27,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         name: 'More than 70 years',
         value: 'More_than_70_years'
     }];
-
+    
+    $scope.form = {
+        age: $scope.typeOptions[0].value,
+        email: ''
+    };
 
     $scope.sendEmail = function(data) {
         console.log(data);
@@ -41,7 +42,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.value === true) {
                 console.log("Email sent");
                 $scope.showModal = true;
-                $scope.form = {};
+                $scope.form = {
+                    age: $scope.typeOptions[0].value,
+                    email: ''
+                };
             } else {
                 console.log("Error Sending Email");
             }
