@@ -222,6 +222,7 @@ a {
 }
 .success-msg {
     position: fixed;
+    z-index: 99999;
     top: 20px;
     right: 20px;
     text-transform: uppercase;
