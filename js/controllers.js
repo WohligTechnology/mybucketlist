@@ -12,7 +12,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.showModal = false;
 
     $scope.typeOptions = [{
-        name: 'Age',
+        name: 'Age*',
         value: ''
     }, {
         name: 'Less than 29 years',
@@ -27,7 +27,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         name: 'More than 70 years',
         value: 'More_than_70_years'
     }];
-    
+
     $scope.form = {
         age: $scope.typeOptions[0].value,
         email: ''

@@ -20,13 +20,14 @@
                                 personalised bucket list.</h1>
                             <h3>In the meantime, let's get to know each other?</h3>
                             <div class="form-group text-left">
-                                <select class="form-control" name="age" ng-model="form.age" ng-options='option.value as option.name for option in typeOptions'>
-                                </select>
+                                <select class="form-control" name="age" ng-model="form.age" ng-options='option.value as option.name for option in typeOptions' required ng-class="{'reddish': formName.age.$invalid && formName.age.$touched}"></select>
+                                <!-- <div class="error-msg" ng-show="formName.age.$invalid && formName.age.$touched">Select Age</div> -->
                             </div>
                             <div class="form-group text-left">
-                                <input type="email" name="email" class="form-control" placeholder="Email id" ng-model="form.email">
+                                <input type="email" name="email" class="form-control" placeholder="Email id*" ng-model="form.email" required ng-class="{'reddish': formName.email.$invalid && formName.email.$touched}">
+                                <!-- <div class="error-msg" ng-show="formName.email.$invalid && formName.email.$touched">Enter Email ID</div> -->
                             </div>
-                            <button class="btn btn-info btn-long uppercase" type="submit" ng-disabled="!form.age && !form.email">Submit</button>
+                            <button class="btn btn-info btn-long uppercase" type="submit" ng-disabled="formName.$invalid">Submit</button>
                         </div>
                         <h1 class="text-center color-white">Coming Soon</h1>
                     </form>
