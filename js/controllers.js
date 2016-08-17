@@ -37,7 +37,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log(data);
         $http({
             method: 'GET',
-            url: 'http://bucketmylist.in/mail.php?email=' + data.email + "&age=" + data.age,
+            url: 'mail.php?email=' + data.email + "&age=" + data.age,
         }).success(function(data) {
             if (data.value === true) {
                 console.log("Email sent");
