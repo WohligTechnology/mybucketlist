@@ -237,4 +237,7 @@ a {
 .reddish {
   border-color: $brand-danger !important;
 }
+.overflow-hidden {
+  overflow: hidden;
+}
 @import "fancybox-override";
