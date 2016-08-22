@@ -1,8 +1,8 @@
-<div class="success-msg" ng-show="showModal">Thank you for your details!</div>
 <div class="blue-bg" min-height>
 
     <div class="container">
-            <div class="overflow-hidden hidden-xs"><img src="img/cloud1.png" class="cloud1 cloud">
+            <div class="overflow-hidden hidden-xs">
+              <img src="img/cloud1.png" class="cloud1 cloud">
               <img src="img/cloud2.png" class="cloud2 cloud">
               </div>
             <div class="row">
@@ -20,16 +20,19 @@
                                 personalised bucket list.</h1>
                             <h3>In the meantime, let's get to know each other?</h3>
                             <div class="form-group text-left">
-                                <select class="form-control" name="age" ng-model="form.age" ng-options='option.value as option.name for option in typeOptions' required ng-class="{'reddish': formName.age.$invalid && formName.age.$touched}"></select>
-                                <!-- <div class="error-msg" ng-show="formName.age.$invalid && formName.age.$touched">Select Age</div> -->
+                                <select class="form-control" name="age" ng-model="form.age" required ng-class="{'reddish': formName.age.$invalid && formName.age.$touched}">
+                                  <option value="{{option.value}}" ng-disabled="option.value == ''" ng-repeat='option in typeOptions'>{{option.name}}</option>
+                                </select>
+                                <div class="error-msg" ng-show="formName.age.$invalid && formName.age.$touched">Please Select Age</div>
                             </div>
                             <div class="form-group text-left">
                                 <input type="email" name="email" class="form-control" placeholder="Email id*" ng-model="form.email" required ng-class="{'reddish': formName.email.$invalid && formName.email.$touched}">
-                                <!-- <div class="error-msg" ng-show="formName.email.$invalid && formName.email.$touched">Enter Email ID</div> -->
+                                <div class="error-msg" ng-show="formName.email.$invalid && formName.email.$touched">Please Enter Email ID</div>
                             </div>
                             <button class="btn btn-info btn-long uppercase" type="submit" ng-disabled="formName.$invalid">Submit</button>
+                            <div class="success-msg" ng-show="showModal"><img src="img/thank-you.png" alt=""></div>
                         </div>
-                        <h1 class="text-center color-white">Coming Soon</h1>
+                        <h1 class="text-center color-white" ng-show="!showModal">Coming Soon</h1>
                     </form>
                 </div>
 
