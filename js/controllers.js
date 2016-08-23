@@ -42,10 +42,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.value === true) {
                 console.log("Email sent");
                 $scope.showModal = true;
-                $scope.form = {
-                    age: $scope.typeOptions[0].value,
-                    email: ''
-                };
             } else {
                 console.log("Error Sending Email");
             }

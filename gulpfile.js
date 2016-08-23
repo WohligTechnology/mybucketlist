@@ -29,9 +29,9 @@ var jsArray = [
 var replacehostFrom = "http://localhost/demo/";
 var replacehostTo = "http://wohlig.co.in/demo2/";
 
-var ftpString = "U2FsdGVkX19KJ4w0W1pxaUyRsJcjQO5RL98s2rfWnmpoGlaoPfxb8Ibdl0yu5NoHaLfSDmk2WnqRVpQfIAB8wv/Srsy/Y9OUyx5gs3ZutJ2MdGMlS8IaMJmfLSp77xVx1yuRD4aFlRuo0yQ/Ldy2pA==";
+var ftpString = "U2FsdGVkX1/W33VvtUuDCqa4AjDLbE70T9RPaqiusxsVMRwtpJxMUM2hvPQQbVJVC8KE1HBWRJ0389Ddwes6cLR7t/vseEsXx77kJZwkU04gX24jjOuF2v1Ucmb6nwx+kx/kvhndNzMiu6OMsXxeYg==";
 
-var uploadingFolder = "mybucketlist";
+var uploadingFolder = "";
 var password = "";
 
 

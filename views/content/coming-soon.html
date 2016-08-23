@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <form class="cloud-form" name="formName" ng-submit="sendEmail(form);">
+                    <form class="cloud-form" name="formName">
                         <img src="img/logo.png" alt="My Bucket List" class="logo">
                         <div class="paper-box text-center">
                             <h1 class="color-primary">Busy preparing your
@@ -29,10 +29,10 @@
                                 <input type="email" name="email" class="form-control" placeholder="Email id*" ng-model="form.email" required ng-class="{'reddish': formName.email.$invalid && formName.email.$touched}">
                                 <div class="error-msg" ng-show="formName.email.$invalid && formName.email.$touched">Please Enter Email ID</div>
                             </div>
-                            <button class="btn btn-info btn-long uppercase" type="submit" ng-disabled="formName.$invalid">Submit</button>
+                            <button class="btn btn-info btn-long uppercase" ng-click="sendEmail(form);" ng-disabled="formName.$invalid" ng-show="!showModal">Submit</button>
                             <div class="success-msg" ng-show="showModal"><img src="img/thank-you.png" alt=""></div>
                         </div>
-                        <h1 class="text-center color-white" ng-show="!showModal">Coming Soon</h1>
+                        <h1 class="text-center color-white">Coming Soon</h1>
                     </form>
                 </div>
 

@@ -213,21 +213,17 @@ a {
     @include transform(translateX(0));
   }
 }
-@media (max-width: $screen-xs-max) {
-  .scene {
-    width: 100%!important;
-  }
 
-  .container {
-    width: 100%;
-  }
-}
 .success-msg {
     position: absolute;
     z-index: 9;
     bottom: -5px;
     left: 50%;
     @include transform(translateX(-50%));
+    width: 100%;
+    img {
+      width: 100%;
+    }
 }
 .error-msg {
     position: absolute;
@@ -257,5 +253,17 @@ a {
 }
 .overflow-hidden {
   overflow: hidden;
+}
+@media (max-width: $screen-xs-max) {
+  .scene {
+    width: 100%!important;
+  }
+
+  .container {
+    width: 100%;
+  }
+  .success-msg {
+    bottom: auto;
+  }
 }
 @import "fancybox-override";
