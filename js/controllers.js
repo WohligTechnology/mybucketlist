@@ -33,19 +33,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         email: ''
     };
 
-    $scope.sendEmail = function(data) {
-        console.log(data);
-        $http({
-            method: 'GET',
-            url: 'mail.php?email=' + data.email + "&age=" + data.age,
-        }).success(function(data) {
-            if (data.value === true) {
-                console.log("Email sent");
-                $scope.showModal = true;
-            } else {
-                console.log("Error Sending Email");
+    $scope.sendEmail = function(data, formValidate) {
+        if (formValidate.$valid) {
+            $http({
+                method: 'GET',
+                url: 'mail.php?email=' + data.email + "&age=" + data.age,
+            }).success(function(data) {
+                if (data.value === true) {
+                    console.log("Email sent");
+                    $scope.showModal = true;
+                } else {
+                    console.log("Error Sending Email");
+                }
+            });
+        } else {
+            if (formValidate.age.$invalid) {
+                formValidate.age.$touched = true;
             }
-        });
+            if (formValidate.email.$invalid) {
+                formValidate.email.$touched = true;
+            }
+        }
     };
 
 })
