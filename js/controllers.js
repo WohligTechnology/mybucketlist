@@ -34,7 +34,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 
     $scope.sendEmail = function(data, formValidate) {
-        if (formValidate.$valid) {
+        if ((data.age !== '' && data.age !== null && data.age !== undefined)  && (data.email !== '' && data.email !== null && data.email !== undefined)) {
+          console.log("here");
             $http({
                 method: 'GET',
                 url: 'mail.php?email=' + data.email + "&age=" + data.age,
@@ -47,10 +48,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             });
         } else {
-            if (formValidate.age.$invalid) {
+            if (data.age === '' || data.age === null || data.age === undefined) {
                 formValidate.age.$touched = true;
             }
-            if (formValidate.email.$invalid) {
+            if (data.email === '' || data.email === null || data.email === undefined) {
                 formValidate.email.$touched = true;
             }
         }
