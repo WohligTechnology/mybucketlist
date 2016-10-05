@@ -26,8 +26,9 @@
                                 <div class="error-msg" ng-show="(form.age == '' || form.age == null || form.age == undefined) && formName.age.$touched">Please Select Age</div>
                             </div>
                             <div class="form-group text-left">
-                                <input type="email" name="email" class="form-control" placeholder="Email id*" ng-model="form.email" ng-class="{'reddish': (form.email == '' || form.email == null || form.email == undefined) && formName.email.$touched}">
-                                <div class="error-msg" ng-show="(form.email == '' || form.email == null || form.email == undefined) && formName.email.$touched">Please Enter Email ID</div>
+                                <input type="email" name="email" class="form-control" placeholder="Email id*" ng-pattern="emailRegex" ng-model="form.email" ng-class="{'reddish': ((form.email == '' || form.email == null || form.email == undefined) && formName.email.$touched) || (formName.email.$dirty && (formName.email.$error.pattern === true))}">
+                                <div class="error-msg" ng-show="(form.email == '' || form.email == null || form.email == undefined) && formName.email.$touched ">Please Enter Email ID</div>
+                                <div class="error-msg" ng-show="formName.email.$dirty && (formName.email.$error.pattern === true)">Please Enter a valid Email ID</div>
                             </div>
                             <button class="btn btn-info btn-long uppercase" ng-click="sendEmail(form,formName);" ng-show="!showModal">Submit</button>
                             <div class="success-msg" ng-show="showModal"><img src="img/thank-you.png" alt=""></div>

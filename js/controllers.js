@@ -10,7 +10,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.footer = "";
     TemplateService.slider = "";
     $scope.showModal = false;
-
+    $scope.emailRegex  = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
     $scope.typeOptions = [{
         name: 'Age*',
         value: ''
