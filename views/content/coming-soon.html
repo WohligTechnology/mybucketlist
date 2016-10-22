@@ -1,42 +1,53 @@
 <div class="blue-bg" min-height>
 
     <div class="container">
-            <div class="overflow-hidden hidden-xs">
-              <img src="img/cloud1.png" class="cloud1 cloud">
-              <img src="img/cloud2.png" class="cloud2 cloud">
-              </div>
-            <div class="row">
+        <div class="overflow-hidden hidden-xs">
+            <img src="img/cloud1.png" class="cloud1 cloud">
+            <img src="img/cloud2.png" class="cloud2 cloud">
+        </div>
+        <div class="row">
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <img src="img/tour.png" class="resp-img">
-                </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <img src="img/tour.png" class="resp-img">
+            </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <form class="cloud-form" name="formName">
-                        <img src="img/logo.png" alt="My Bucket List" class="logo">
-                        <div class="paper-box text-center">
-                            <h1 class="color-primary">Busy preparing your
-                                <br>
-                                personalised bucket list.</h1>
-                            <h3>In the meantime, let's get to know each other?</h3>
-                            <div class="form-group text-left">
-                                <select class="form-control" name="age" ng-model="form.age" ng-class="{'reddish': (form.age == '' || form.age == null || form.age == undefined) && formName.age.$touched}">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <form class="cloud-form" name="formName">
+                    <img src="img/logo.png" alt="My Bucket List" class="logo">
+                    <div class="paper-box text-center">
+                        <h1 class="color-primary">Busy preparing your
+                            <br> personalised bucket list.</h1>
+                        <h3>In the meantime, let's get to know each other?</h3>
+                        <div class="form-group text-left">
+                            <select class="form-control" name="age" ng-model="form.age" ng-class="{'reddish': (form.age == '' || form.age == null || form.age == undefined) && formName.age.$touched}">
                                   <option value="{{option.value}}" ng-disabled="option.value == ''" ng-repeat='option in typeOptions'>{{option.name}}</option>
                                 </select>
-                                <div class="error-msg" ng-show="(form.age == '' || form.age == null || form.age == undefined) && formName.age.$touched">Please Select Age</div>
-                            </div>
-                            <div class="form-group text-left">
-                                <input type="email" name="email" class="form-control" placeholder="Email id*" ng-pattern="emailRegex" ng-model="form.email" ng-class="{'reddish': ((form.email == '' || form.email == null || form.email == undefined) && formName.email.$touched) || (formName.email.$dirty && (formName.email.$error.pattern === true))}">
-                                <div class="error-msg" ng-show="(form.email == '' || form.email == null || form.email == undefined) && formName.email.$touched ">Please Enter Email ID</div>
-                                <div class="error-msg" ng-show="formName.email.$dirty && (formName.email.$error.pattern === true)">Please Enter a valid Email ID</div>
-                            </div>
-                            <button class="btn btn-info btn-long uppercase" ng-click="sendEmail(form,formName);" ng-show="!showModal">Submit</button>
-                            <div class="success-msg" ng-show="showModal"><img src="img/thank-you.png" alt=""></div>
+                            <div class="error-msg" ng-show="(form.age == '' || form.age == null || form.age == undefined) && formName.age.$touched">Please Select Age</div>
                         </div>
-                        <h1 class="text-center color-white">Coming Soon</h1>
-                    </form>
-                </div>
-
+                        <div class="form-group text-left">
+                            <input type="email" name="email" class="form-control" placeholder="Email id*" ng-pattern="emailRegex" ng-model="form.email"
+                                ng-class="{'reddish': ((form.email == '' || form.email == null || form.email == undefined) && formName.email.$touched) || (formName.email.$dirty && (formName.email.$error.pattern === true))}">
+                            <div class="error-msg" ng-show="(form.email == '' || form.email == null || form.email == undefined) && formName.email.$touched ">Please Enter Email ID</div>
+                            <div class="error-msg" ng-show="formName.email.$dirty && (formName.email.$error.pattern === true)">Please Enter a valid Email ID</div>
+                        </div>
+                        <button class="btn btn-info btn-long uppercase" ng-click="sendEmail(form,formName);" ng-show="!showModal">Submit</button>
+                        <div class="success-msg" ng-show="showModal"><img src="img/thank-you.png" alt=""></div>
+                    </div>
+                    <h1 class="text-center color-white">Coming Soon</h1>
+                    <div class="text-center ico-spac">
+                        <a href="https://www.facebook.com/bucketmylisttravel/?fref=ts" target="_blank">
+                            <img src="img/facebook.png" alt="">
+                        </a>
+                        <a href="https://twitter.com/BMLtravel" target="_blank">
+                            <img src="img/instagram.png" alt="">
+                        </a>
+                        <a href="https://www.instagram.com/bucketmylisttravel/?hl=en" target="_blank">
+                            <img src="img/twitter.png" alt="">
+                        </a>
+                    </div>
+                </form>
             </div>
+
+        </div>
     </div>
 </div>
